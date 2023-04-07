@@ -126,7 +126,7 @@ function Survey() {
               }
             </div>
             :
-            <textarea className='text-input' rows={5} maxLength={250} value={text} onChange={handleTextInputChange}></textarea>
+            <textarea className='text-input' rows={5}  maxLength={250} value={text} onChange={handleTextInputChange}></textarea>
           }
           <div className={`buttons-flex ${currentQuestion.no > 1 ? 'flex-between':'flex-end'}`}>
             {
