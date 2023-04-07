@@ -62,6 +62,7 @@ function Survey() {
       setAnswers(tempAnswers)
     }
     setCurrentAnswer(option)
+    return tempAnswers
   }
 
   //Handling previous button logic here
@@ -73,6 +74,8 @@ function Survey() {
     setCurrentQuestion(questionsData[prevQuestion - 1])
 
   }
+
+  
 
   //Handling next button logic here
   const handleNext = () => {
@@ -90,9 +93,13 @@ function Survey() {
 
   //Handling Submit survey
   const handleSubmit = () => {
+    var finalAnswers =  [...answers]
+    if(currentQuestion.type === 'text' && text){ // For text type questions only, To Store answer 
+      finalAnswers = handleAnswerSelect(text)
+    }
     localStorage.setItem('isCompleted', 'YES')
     localStorage.setItem('isStarted', false)
-    localStorage.setItem('answers', JSON.stringify(answers))
+    localStorage.setItem('answers', JSON.stringify(finalAnswers))
     setShowThankYou(true)
 
   }

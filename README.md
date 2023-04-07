@@ -29,6 +29,10 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+###  `Storing Logic`
+
+For storing answers, I used LocalStorage. All Answers will be in localstorage after submitting survey.
+
 ### `Site is Live At`
 
 https://tejas128.github.io/Survey/

@@ -26,5 +26,4 @@ module.exports = [{
     no: 5,
     question: 'What could we do to improve our service',
     type:'text'
-},
-]
+},]
