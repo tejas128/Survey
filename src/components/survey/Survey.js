@@ -10,14 +10,14 @@ function Survey() {
   const [answers, setAnswers] = useState([])
   const [text, setText] = useState('')
 
-  //Seting first question 
+  //Setting first question 
   useEffect(() => {
     if(questionsData.length){
       setCurrentQuestion(questionsData[0])
     }
   },[])
   
-  //This is handling current question answer if user submitted previously when user toggle between questions.
+  //This is handling current question answer, if user submitted answer previously.
   useEffect(() => {
     if(currentQuestion && answers.length){
       const answer = answers.find(ans => ans.questionNo === currentQuestion.no)

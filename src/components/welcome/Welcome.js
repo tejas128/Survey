@@ -4,10 +4,12 @@ import { AppContext } from '../../AppContext'
 
 function Welcome() {
   const {setStartSurvey, isCompleted} = useContext(AppContext)
+
   const handleStartSurvey = () => {
     setStartSurvey(true)
     localStorage.setItem('isStarted', true)
   }
+  
   return (
     <div className='welcome-wrapper'>
       <h2>Welcome</h2>
