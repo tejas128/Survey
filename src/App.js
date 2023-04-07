@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react'
+import Survey from './components/survey/Survey'
+import './app.css'
+import { AppContext } from './AppContext'
+import Welcome from './components/welcome/Welcome'
+import ThankYou from './components/thank-you/ThankYou'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const {showThankYou, startSurvey} = useContext(AppContext)
 
-export default App;
+  return (
+    <div className='surver-page'>
+      {
+        !showThankYou && !startSurvey ? <Welcome/> : null
+      }
+      {
+        !showThankYou && startSurvey ? <Survey/> : null
+      }
+      {
+        showThankYou ? <ThankYou/> : null
+      }
+    </div>
+  )
+}
+    
+export default App
