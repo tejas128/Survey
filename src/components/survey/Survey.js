@@ -29,7 +29,8 @@ function Survey() {
         setText('')
       }
     }
-  },[currentQuestion, answers])
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[currentQuestion])
 
   // This fuction will create range for rating inputs base on maxRating value 
   const ratingRange = (end = 5) => {
@@ -60,6 +61,7 @@ function Survey() {
       })
       setAnswers(tempAnswers)
     }
+    setCurrentAnswer(option)
   }
 
   //Handling previous button logic here
